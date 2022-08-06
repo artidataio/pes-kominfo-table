@@ -23,13 +23,10 @@ export default function App() {
 
     const startFetching = async () => {
       const url =
-        "https://corsproxy.io/?" +
-        encodeURIComponent(
-          `https://pse.kominfo.go.id/static/json-static/ASING_TERDAFTAR/${
-            page - 1
-          }.json`
-        );
-
+        "https://gczxrc1v2g.execute-api.ap-southeast-1.amazonaws.com/dev?uri=" +
+        `https://pse.kominfo.go.id/static/json-static/ASING_TERDAFTAR/${
+          page - 1
+        }.json`;
       const fetchData = await (await fetch(url)).json();
       if (!ignore) {
         setData(fetchData);
